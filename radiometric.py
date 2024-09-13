@@ -61,18 +61,18 @@ def visualize_images(original, calibrated):
     
     # Original image
     plt.subplot(1, 2, 1)
-    plt.imshow(original, cmap='gray')
+    plt.imshow(original)
     plt.title('Original Image (DN)')
     plt.colorbar()
 
     # Radiance-corrected image
     plt.subplot(1, 2, 2)
-    plt.imshow(calibrated, cmap='gray')
+    plt.imshow(calibrated)
     plt.title('Radiance-Corrected Image')
     plt.colorbar()
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig("comparision.png")
 
 def process_radiometric_correction(image_path, gain, offset, output_path):
     """
